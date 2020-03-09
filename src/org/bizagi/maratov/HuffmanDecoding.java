@@ -55,10 +55,10 @@ class Decoding {
 			return s;
 		} else {
 			char first = s.charAt(0);
-			if (first == '1') {
-				return printLetter(s.substring(1, s.length()), root.right);
-			} else {
+			if (first == '0') {
 				return printLetter(s.substring(1, s.length()), root.left);
+			} else {
+				return printLetter(s.substring(1, s.length()), root.right);
 			}
 		}
 	}
