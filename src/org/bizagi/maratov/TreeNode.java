@@ -1,5 +1,8 @@
 package org.bizagi.maratov;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class TreeNode {
 
 	int data;
@@ -62,6 +65,26 @@ public class TreeNode {
 			postorderTraversal(root.left);
 			postorderTraversal(root.right);
 			System.out.println(root.data);
+		}
+	}
+
+	public void levelOrderTraversal(TreeNode root) {
+		if (root == null) {
+			return;
+		}
+
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.add(root);
+
+		while (!queue.isEmpty()) {
+			TreeNode node = queue.remove();
+			System.out.println(node.data);
+
+			if (node.left != null)
+				queue.add(node.left);
+
+			if (node.right != null)
+				queue.add(node.right);
 		}
 	}
 
