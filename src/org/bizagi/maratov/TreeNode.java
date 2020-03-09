@@ -1,12 +1,12 @@
 package org.bizagi.maratov;
 
-public class Node {
+public class TreeNode {
 
 	int data;
-	Node left;
-	Node right;
+	TreeNode left;
+	TreeNode right;
 
-	public Node(int data) {
+	public TreeNode(int data) {
 		this.data = data;
 		this.left = this.right = null;
 	}
@@ -14,12 +14,12 @@ public class Node {
 	public void insert(int value) {
 		if (value <= data) {
 			if (left == null)
-				left = new Node(value);
+				left = new TreeNode(value);
 			else
 				left.insert(value);
 		} else {
 			if (right == null)
-				right = new Node(value);
+				right = new TreeNode(value);
 			else
 				right.insert(value);
 		}
@@ -41,7 +41,7 @@ public class Node {
 		}
 	}
 
-	public void preorderTraversal(Node root) {
+	public void preorderTraversal(TreeNode root) {
 		if (root != null) {
 			System.out.println(root.data);
 			preorderTraversal(root.left);
@@ -49,7 +49,7 @@ public class Node {
 		}
 	}
 
-	public void inorderTraversal(Node root) {
+	public void inorderTraversal(TreeNode root) {
 		if (root != null) {
 			inorderTraversal(root.left);
 			System.out.println(root.data);
@@ -57,7 +57,7 @@ public class Node {
 		}
 	}
 
-	public void postorderTraversal(Node root) {
+	public void postorderTraversal(TreeNode root) {
 		if (root != null) {
 			postorderTraversal(root.left);
 			postorderTraversal(root.right);
